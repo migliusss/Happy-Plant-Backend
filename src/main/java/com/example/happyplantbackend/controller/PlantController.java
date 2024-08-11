@@ -1,7 +1,7 @@
 package com.example.happyplantbackend.controller;
 
-import com.example.happyplant.model.Plant;
-import com.example.happyplant.service.PlantService;
+import com.example.happyplantbackend.model.Plant;
+import com.example.happyplantbackend.service.PlantService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
