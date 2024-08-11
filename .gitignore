@@ -31,3 +31,9 @@ build/
 
 ### VS Code ###
 .vscode/
+
+## DB ##
+compose.yaml
+src/main/resources/application.properties
+
+
