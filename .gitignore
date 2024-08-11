@@ -33,7 +33,5 @@ build/
 .vscode/
 
 ## DB ##
-compose.yaml
+compose.yaml.db
 src/main/resources/application.properties
-
-
