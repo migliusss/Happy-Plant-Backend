@@ -19,14 +19,25 @@ public class UserController {
         this.userService = userService;
     }
 
-    @RequestMapping
+    @GetMapping
     public List<User> getAllUsers() {
         return userService.getAllUsers();
     }
 
-    @RequestMapping("/{id}")
+    @GetMapping("/{id}")
     public ResponseEntity<User> getUserById(@PathVariable int id) {
         User user = userService.getUserById(id);
+
+        if (user == null) {
+            return ResponseEntity.notFound().build();
+        }
+
+        return ResponseEntity.ok(user);
+    }
+
+    @GetMapping("/name/{name}")
+    public ResponseEntity<User> getUserByName(@PathVariable String name) {
+        User user = userService.findByName(name);
 
         if (user == null) {
             return ResponseEntity.notFound().build();

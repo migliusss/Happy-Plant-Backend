@@ -8,14 +8,15 @@ CREATE TABLE IF NOT EXISTS plants
     water     VARCHAR(50),
     fertilize VARCHAR(50),
     notes     VARCHAR(200),
-    UNIQUE unique_plant (name, latin_name)
+    UNIQUE (name, latin_name)
     );
 
 -- Create Users Table
 CREATE TABLE IF NOT EXISTS users
 (
     user_id INT AUTO_INCREMENT PRIMARY KEY,
-    name   VARCHAR(100) NOT NULL
+    name   VARCHAR(100) NOT NULL,
+    UNIQUE (name)
     );
 
 -- Create UserPlants Table

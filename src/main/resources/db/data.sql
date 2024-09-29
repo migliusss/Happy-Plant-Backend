@@ -50,10 +50,10 @@ VALUES ('Yucca', 'Yucca gigantea', 'Bright indirect light', 'Every 2-3 weeks', '
         'Tolerates low light and irregular watering.'),
        ('Philodendron', 'Philodendron "Imperial Green"', 'Bright indirect light', 'Weekly', 'Monthly',
         'Allow soil to dry between waterings. Prefers humidity.')
-    ON DUPLICATE KEY UPDATE light     = VALUES(light),
-    water     = VALUES(water),
-                         fertilize = VALUES(fertilize),
-                         notes     = VALUES(notes);
+ON DUPLICATE KEY UPDATE light     = VALUES(light),
+                        water     = VALUES(water),
+                        fertilize = VALUES(fertilize),
+                        notes     = VALUES(notes);
 
 -- Insert initial data into users table
 INSERT INTO users (name)
@@ -61,7 +61,7 @@ VALUES ('Cleoclatra'),
        ('Waffle Bot'),
        ('Pookey Bear'),
        ('Tootsie Roll')
-    ON DUPLICATE KEY UPDATE name = VALUES(name);
+ON DUPLICATE KEY UPDATE name = VALUES(name);
 
 -- Insert initial data into user_plants table
 INSERT INTO user_plants (user_plant_name, user_id, plant_id)
@@ -71,7 +71,7 @@ VALUES ('Dumpling', 1, 1),
        ('Boo', 4, 4),
        ('Fluffy', 1, 5),
        ('Girly', 2, 1)
-    ON DUPLICATE KEY UPDATE user_plant_name = VALUES(user_plant_name);
+ON DUPLICATE KEY UPDATE user_plant_name = VALUES(user_plant_name);
 
 -- Insert initial data into watering_schedule table
 INSERT INTO watering_schedule (last_watering, next_watering, user_plant_id)
@@ -81,5 +81,5 @@ VALUES ('2024-07-01', '2024-07-08', 1),
        ('2024-07-04', '2024-07-11', 4),
        ('2024-07-05', '2024-07-12', 5),
        ('2024-07-06', '2024-07-13', 6)
-    ON DUPLICATE KEY UPDATE last_watering = VALUES(last_watering),
-    next_watering = VALUES(next_watering);
+ON DUPLICATE KEY UPDATE last_watering = VALUES(last_watering),
+                        next_watering = VALUES(next_watering);
